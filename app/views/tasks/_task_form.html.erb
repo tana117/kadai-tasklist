@@ -1,9 +1,15 @@
 <%= form_for(@task) do |f| %>
-  <%= f.label :content, 'Title' %>
-  <%= f.text_field :content %>
-  
-  <%= f.label :status, 'Status' %>
-  <%= f.text_field :status %>
-  
-  <%= f.submit '作成' %>
+  <div class="row">
+    <div class="form-group col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+      <%= f.label :content, 'Title' %>
+      <%= f.text_field :content, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+      <%= f.label :status, 'Status' %>
+      <%= f.text_field :status, class: 'form-control' %>
+    </div>
+  </div>
+  <%= f.submit '作成', class: 'btn btn-primary' %>
 <% end %>
