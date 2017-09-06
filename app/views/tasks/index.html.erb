@@ -2,8 +2,13 @@
 
 <ul>
   <% @tasks.each do |task| %>
-    <li><%= link_to task.id, task %> : <%= task.content %> &gt; <%= task.status %></li>
+    <li><strong><%= link_to task.id, task %> : <%= task.content %> &gt; <%= task.status %></strong> :made by <%= task.user.name %></li>
   <% end %>
 </ul>
 
-<%= link_to '新規タスク作成', new_task_path %>
+<% if logged_in?%>
+  <%= link_to '新規タスク作成', new_task_path %>
+<% else %>
+  <%= link_to 'Signup', signup_path %>
+  <%= link_to 'Login', login_path %>
+<% end %>
