@@ -6,7 +6,7 @@
   <% end %>
 </ul>
 
-<% if logged_in?%>
+<% if logged_in? %>
   <%= link_to '新規タスク作成', new_task_path %>
 <% else %>
   <%= link_to 'Signup', signup_path %>
