@@ -3,7 +3,10 @@ before_action :require_user_logged_in, only: [:create, :show, :edit, :destroy, :
 before_action :correct_user, only: [:show, :edit, :destroy, :update]
 
   def index
-    @tasks = current_user.tasks
+    if logged_in?
+      @user = current_user
+      @tasks = current_user.tasks.order('created_at DESC')
+    end
   end
   
   def show
